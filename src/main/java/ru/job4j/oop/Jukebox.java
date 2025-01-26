@@ -17,7 +17,7 @@ public class Jukebox {
     }
 
     public static void main(String[] args) {
-        Jukebox artur = new Jukebox();
-        artur.music(5);
+        Jukebox alisa = new Jukebox();
+        alisa.music(5);
     }
 }
