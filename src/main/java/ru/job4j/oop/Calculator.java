@@ -16,8 +16,8 @@ public class Calculator {
         return y / x;
     }
 
-    public int sumAllOperations() {
-        return Calculator.sum(10) + Calculator.minus(10) + this.divide(10);
+    public int sumAllOperations(int z) {
+        return Calculator.sum(z) + Calculator.minus(z) + this.divide(z);
     }
 
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class Calculator {
         int resultOfDivide = calculatorOfDivide.divide(10);
         System.out.println(resultOfDivide);
         Calculator calculatorOfAllOperations = new Calculator();
-        int resultOfAllOperationsSum = calculatorOfAllOperations.sumAllOperations();
+        int resultOfAllOperationsSum = calculatorOfAllOperations.sumAllOperations(10);
         System.out.println(resultOfAllOperationsSum);
     }
 }
