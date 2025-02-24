@@ -13,41 +13,36 @@ public class Tracker {
         return item;
     }
 
-    public Item findById(int id) {
-        Item result = null;
-        for (int i = 0; i < size; i++) {
-            Item item = items[i];
-            if (item.getId() == id) {
-                result = item;
+    private int indexOf(int id) {
+        int result = -1;
+        for (int index = 0; index < size; index++) {
+            if (items[index].getId() == id) {
+                result = index;
                 break;
             }
         }
         return result;
     }
 
+    public Item findById(int id) {
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
+    }
+
     public Item[] findAll() {
-        Item[] result = new Item[items.length];
-        int size = 0;
-        for (int i = 0; i < items.length; i++) {
-            Item item = items[i];
-            if (item != null) {
-                result[size] = item;
-                size++;
-            }
-        }
-        return Arrays.copyOf(result, size);
+        return Arrays.copyOf(items, size);
     }
 
     public Item[] findByName(String key) {
         Item[] result = new Item[items.length];
-        int size = 0;
-        for (int i = 0; i < items.length; i++) {
+        int count = 0;
+        for (int i = 0; i < size; i++) {
             Item item = items[i];
-            if (item != null && item.getName().equals(key)) {
-                result[size] = item;
-                size++;
+            if (item.getName().equals(key)) {
+                result[count] = item;
+                count++;
             }
         }
-        return Arrays.copyOf(result, size);
+        return Arrays.copyOf(result, count);
     }
 }
