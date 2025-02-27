@@ -27,9 +27,11 @@ public class Tracker {
     public void delete(int id) {
         int start = indexOf(id) + 1;
         int length = size - indexOf(id) - 1;
-        System.arraycopy(items, start, items, indexOf(id), length);
-        items[size - 1] = null;
-        size--;
+            if (indexOf(id) != -1) {
+            System.arraycopy(items, start, items, indexOf(id), length);
+            items[size - 1] = null;
+            size--;
+            }
     }
 
     public Item findById(int id) {
