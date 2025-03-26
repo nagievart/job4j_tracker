@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class BackArrayTest {
+
     @Test
     void whenInputArrayHasEvenAmountElements() {
         String[] names = {"Petr", "Ivan", "Nik", "Vasya"};
