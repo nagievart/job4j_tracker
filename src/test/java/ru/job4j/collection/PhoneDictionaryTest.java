@@ -34,7 +34,7 @@ class PhoneDictionaryTest {
         phones.add(
                 new Person("Artur", "Nagiev", "534872", "Moscow")
         );
-        ArrayList<Person> persons = phones.find("keek");
+        ArrayList<Person> persons = phones.find("kek");
         assertThat(persons.isEmpty());
     }
 }
