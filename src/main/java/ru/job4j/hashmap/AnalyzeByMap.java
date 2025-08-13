@@ -42,17 +42,9 @@ public class AnalyzeByMap {
                 String name = subject.name();
                 int score = subject.score();
 
-                if (subjectsScores.containsKey(name)) {
-                    subjectsScores.put(name, subjectsScores.get(name) + score);
-                } else {
-                    subjectsScores.put(name, score);
-                }
+                subjectsScores.put(name, subjectsScores.getOrDefault(name, 0) + score);
 
-                if (subjectsCounter.containsKey(name)) {
-                    subjectsCounter.put(name, subjectsCounter.get(name) + 1);
-                } else {
-                    subjectsCounter.put(name, 1);
-                }
+                subjectsCounter.put(name, subjectsCounter.getOrDefault(name, 0) + 1);
             }
         }
 
