@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.function.*;
 
 public class FunctionalInterfaces {
-    @SuppressWarnings("checkstyle:AvoidNestedBlocks")
+
     public static void main(String[] args) {
         Map<Integer, String> map = new HashMap<>();
         BiConsumer<Integer, String> biConsumer = (first, second) -> map.put(first, second);
