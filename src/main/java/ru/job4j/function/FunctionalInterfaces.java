@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.function.*;
 
 public class FunctionalInterfaces {
+    @SuppressWarnings("checkstyle:AvoidNestedBlocks")
     public static void main(String[] args) {
         Map<Integer, String> map = new HashMap<>();
         BiConsumer<Integer, String> biConsumer = (first, second) -> map.put(first, second);
@@ -26,7 +27,7 @@ public class FunctionalInterfaces {
             /*
                 Замените проверку в if() на использование BiPredicate, он объявлен выше, требуется его реализовать.
              */
-            biPredicate.test(key, map.get(key)); {
+            if (biPredicate.test(key, map.get(key))) {
                 System.out.println("key: " + key + " value: " + map.get(key));
             }
         }
